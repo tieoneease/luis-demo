@@ -1,13 +1,7 @@
-function turnElementTargetRed(event) {
-  event.target.style["backgroundColor"] = "red";
-}
-
 function generateBoard(board) {
   console.log("generating board...");
   var NUM_ROWS = 3;
   var NUM_COLS = 3;
-
-  board.addEventListener("click", turnElementTargetRed); // event delegation
 
   var currentRow;
   for (var i = 0; i < NUM_ROWS; ++i) {
@@ -27,6 +21,16 @@ function main() {
   // only runs after DOM loaded, so all DOM is available
   var board = document.getElementById("board");
   generateBoard(board);
+
+  var currentPlayer = "o";
+  function turnElementTargetRed(event) {
+    event.target.innerText = currentPlayer;
+    // check if location already has marking
+    // check win conditions
+    if (currentPlayer === "o") currentPlayer = "x";
+    else currentPlayer = "o";
+  }
+  board.addEventListener("click", turnElementTargetRed); // event delegation
 }
 
 document.addEventListener("DOMContentLoaded", function (event) {
