@@ -8,6 +8,13 @@
         color: blue;
       }
     </style>
+    <script>
+      var luisContainer;
+      document.addEventListener("DOMContentLoaded", function (event) {
+        luisContainer = document.querySelector(".luis-container");
+        luisContainer.innerText = "Bye Luis!";
+      });
+    </script>
   </head>
   <body>
     <div class="luis-container">Hello Luis!</div>
