@@ -1,7 +1,13 @@
+function turnElementTargetRed(event) {
+  event.target.style["backgroundColor"] = "red";
+}
+
 function generateBoard(board) {
   console.log("generating board...");
   var NUM_ROWS = 3;
   var NUM_COLS = 3;
+
+  board.addEventListener("click", turnElementTargetRed); // event delegation
 
   var currentRow;
   for (var i = 0; i < NUM_ROWS; ++i) {
