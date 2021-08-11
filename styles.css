@@ -1,4 +1,18 @@
 .board {
   /*styling the class container */
-  background-color: peachpuff;
+  background-color: blue;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  height: 100px;
+  background-color: green;
+}
+
+.col {
+  background-color: pink;
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
 }
